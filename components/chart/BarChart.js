@@ -27,9 +27,11 @@ const BarChart = () => {
   useEffect(() => {
   
     const fetchData = async () => {
+        console.log(process.env.NEXT_PUBLIC_apiBaseUrl);
       const res = await fetch(
         //using environment variable for base url
-        `https://main--resplendent-lebkuchen-a23f08.netlify.app/api/orders`
+
+        `/api/orders`
       );
       const data = await res.json();
       console.log(data);

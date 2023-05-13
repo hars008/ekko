@@ -30,7 +30,7 @@ const Chart = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
-        `https://main--resplendent-lebkuchen-a23f08.netlify.app/api/activities?year=${year}`
+        `/api/activities?year=${year}`
       );
       const data = await res.json();
       console.log(data);
