@@ -23,11 +23,13 @@ ChartJS.register(
 
 const BarChart = () => {
   const [chartData, setChartData] = useState([]);
-
+  
   useEffect(() => {
+  
     const fetchData = async () => {
       const res = await fetch(
-        `http://localhost:3000/api/orders`
+        //using environment variable for base url
+        `https://main--resplendent-lebkuchen-a23f08.netlify.app/api/orders`
       );
       const data = await res.json();
       console.log(data);
@@ -93,36 +95,6 @@ const BarChart = () => {
       },
     };
 
-
-//   const options = {
-//     responsive: true,
-//     maintainAspectRatio: true,
-
-//     plugins: {
-//       legend: {
-//         display: false,
-//       },
-//       labels: {
-
-//         color: "white",
-//         fontColor: ["white"],
-//         fontSize: 20,
-
-//       },
-// scales: {
-//   xAxes: [
-//     {
-//       ticks: {
-//         display: false, //this will remove only the label
-//       },
-//     },
-//   ];
-// }
-
-      
-
-//     },
-//   };
 
   return (
     <div className="w-full ">
