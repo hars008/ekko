@@ -1,38 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# ekko.com Dashboard (assignment)
+This Full Stack web application is designed to visualize activities and orders using line and bar graphs, while also leveraging MongoDB for data storage. The project includes the creation of APIs that facilitate seamless connectivity to the MongoDB database.
 
-First, run the development server:
+The application provides users with an intuitive interface to view and interact with the visual representations of the activity and order data. By utilizing MongoDB's data storage capabilities, the project ensures efficient data retrieval and management for a smooth user experience.
+
+In addition to the visualizations, the application features a search bar that allows users to query the MongoDB database for specific individuals. Upon searching, the application dynamically retrieves relevant data and provides links to corresponding LinkedIn profiles, creating a comprehensive and interconnected experience.
+
+To enhance usability, the project incorporates responsive design principles, ensuring that the application adapts and performs optimally across different devices and screen sizes.
+
+The README file accompanying the project provides detailed information on how to set up and run the application, as well as any additional dependencies or configurations required.
+
+Note: The primary objective of this project is to showcase Full Stack development skills, particularly the integration of MongoDB for data storage and the creation of APIs to facilitate data retrieval and manipulation.
+## Authors
+
+- [@harsh bansal](https://github.com/hars008)
+
+
+## Deployment
+
+Download or clone the repo. 
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone git@github.com:hars008/ekko.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+open the folder in terminal, and run commands
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+  npm install 
+  npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Open http://localhost:3000 with your browser to see the result.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+    
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## API Reference
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Get orders with their profit in particular month of the year
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```http
+   /api/orders
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. api endpoints |
+
+#### Get activities data
+
+```http
+   /api/activities?year-${year}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `year`      | `string` | **Required**. year of activity to fetch |
+
+#### get all users or people, for search box
+
+```http
+  api/search
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `api_key`      | `string` | **Required**. api endpoints  |
+
+
+
+## Demo
+
+This project is deployed on netlify
+
+- [Deployed Link](https://main--resplendent-lebkuchen-a23f08.netlify.app/)
+
+
